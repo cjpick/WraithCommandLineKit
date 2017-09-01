@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+public struct Help: Command {
+    
+    public init() throws {
+        
+    }
+    
+    public func run() throws {
+        
+    }
+}
