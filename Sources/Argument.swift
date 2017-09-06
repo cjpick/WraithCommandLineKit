@@ -8,14 +8,21 @@
 
 import Foundation
 
+public enum ArgumentParameterStatus {
+    case none
+    case optional
+    case required
+}
+
 public protocol Argument: CustomStringConvertible {
     
     var hook: [String] { get }
     var definition: String { get }
     
-    init?(hook: String?, parameter: String?)
+    init?(hook: String?, definition: String?, defaultParameter:String?)
     
-    func hasParameter(for hook: String)->Bool
+    var parameterStatus: ArgumentParameterStatus { get }
+    func setParameter(_ value: String)
 }
 
 extension Argument {
