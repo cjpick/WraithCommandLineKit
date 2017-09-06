@@ -10,7 +10,7 @@ import Foundation
 
 public struct Help: Command {
     
-    public init() throws {
+    public init(_ arguments: [String]) throws {
         
     }
     
