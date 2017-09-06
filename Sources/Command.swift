@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol Command {
-    init() throws
+    init(_ arguments: [String]) throws
     func run() throws
 }
