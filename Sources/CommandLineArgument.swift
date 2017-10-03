@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol CommandLineArgument {
-    static var shortOptions: String { get }
-    init(_ arg: String, value: String?)
+    var shortOptions: String { get }
+    func add(_ arg: String, value: String?)
 }
