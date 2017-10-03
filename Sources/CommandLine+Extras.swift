@@ -9,7 +9,7 @@ import Foundation
 
 extension CommandLine {
     
-    public static func flag(_ arguments: inout CommandLineArgument) {
+    public static func flag(_ arguments: CommandLineArgument)->CommandLineArgument {
         while case let option = getopt(CommandLine.argc, CommandLine.unsafeArgv, arguments.shortOptions), option != -1 {
             let arg = String(UnicodeScalar(CUnsignedChar(option)))
             var value: String? = nil
@@ -18,5 +18,6 @@ extension CommandLine {
             }
             arguments.add(arg, value: value)
         }
+        return arguments
     }
 }
